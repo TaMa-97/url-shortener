@@ -11,3 +11,4 @@ This is a simple web application that can convert an original URL into a shorten
 
 - The original URL can be entered and a shortened URL can be generated.
 - Clicking on the shortened URL can redirect to the original URL.
+- Generated shortened URLs can be copied to the clipboard with a single click.
