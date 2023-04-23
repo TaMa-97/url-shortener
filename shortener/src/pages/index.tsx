@@ -38,6 +38,14 @@ const Home = () => {
       setError("エラーが発生しました。もう一度やり直してください。");
     }
   };
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(shortUrl as string);
+      alert("短縮URLがクリップボードにコピーされました。");
+    } catch (error) {
+      alert("クリップボードにコピーできませんでした。");
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -80,6 +88,9 @@ const Home = () => {
         {shortUrl && (
           <p className={styles.shortUrlInfo}>
             短縮URLはこちら: <a href={shortUrl}>{shortUrl}</a>
+            <button className={styles.copyButton} onClick={copyToClipboard}>
+              コピー
+            </button>
           </p>
         )}
       </div>
